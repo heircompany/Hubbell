@@ -27,7 +27,6 @@ function paginate(req, res, next) {
         });
       });
     });
-
 }
 
 Product.createMapping(function(err, mapping) {
@@ -85,7 +84,6 @@ router.post('/product/:product_id', function(req, res, next) {
   });
 });
 
-
 router.post('/remove', function(req, res, next) {
   Cart.findOne({ owner: req.user._id }, function(err, foundCart) {
     foundCart.items.pull(String(req.body.item));
@@ -98,7 +96,6 @@ router.post('/remove', function(req, res, next) {
     });
   });
 });
-
 
 router.post('/search', function(req, res, next) {
   res.redirect('/search?q=' + req.body.q);
@@ -129,7 +126,6 @@ router.get('/', function(req, res, next) {
   } else {
     res.render('main/home');
   }
-
 });
 
 router.get('/page/:page', function(req, res, next) {
@@ -152,7 +148,6 @@ router.get('/products/:id', function(req, res, next) {
     });
 });
 
-
 router.get('/product/:id', function(req, res, next) {
   Product.findById({ _id: req.params.id }, function(err, product) {
     if (err) return next(err);
@@ -161,8 +156,6 @@ router.get('/product/:id', function(req, res, next) {
     });
   });
 });
-
-
 
 router.post('/payment', function(req, res, next) {
 
@@ -209,8 +202,6 @@ router.post('/payment', function(req, res, next) {
       }
     ]);
   });
-
-
 });
 
 module.exports = router;
