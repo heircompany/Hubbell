@@ -1,6 +1,6 @@
 module.exports = {
 
-  database: 'mongodb://root:abc123@ds037095.mongolab.com:37095/ecommerce',
+  database: 'mongodb://admin:admin@ds161400.mlab.com:61400/heroku_9k7pf22q',
   port: 3000,
-  secretKey: "Arash@$@!#@"
+  secretKey: "puddles"
 }
